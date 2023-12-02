@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.PS4Controller;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 import frc.robot.Constants;
 
 import com.ctre.phoenix.led.*;
@@ -20,7 +21,7 @@ import com.ctre.phoenix.led.TwinkleOffAnimation.TwinkleOffPercent;
 public class CANdleSystem extends SubsystemBase {
     private final CANdle m_candle = new CANdle(Constants.CANdleID, "rio");
     private final int LedCount = 300;
-    private PS4Controller joystick;
+    // private CommandPS4Controller joystick;
 
     private Animation m_toAnimate = null;
 
@@ -46,8 +47,8 @@ public class CANdleSystem extends SubsystemBase {
 
     private AnimationTypes m_currentAnimation;
 
-    public CANdleSystem(PS4Controller joy) {
-        this.joystick = joy;
+    public CANdleSystem() {
+        // this.joystick = joy;
         changeAnimation(AnimationTypes.SetAll);
         CANdleConfiguration configAll = new CANdleConfiguration();
         configAll.statusLedOffWhenActive = true;
